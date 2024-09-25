@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ModalComponent } from './shared/modal/modal.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     HomeComponent,
     CardBuscaComponent,
     CardDepoimentoComponent,
-    FormBuscaComponent
+    FormBuscaComponent,
+    ModalComponent,
+    BotaoControleComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,13 +55,14 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatDialogModule
   ],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
     provideNativeDateAdapter()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
